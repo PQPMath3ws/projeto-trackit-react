@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import reportWebVitals from './reportWebVitals';
 
+import Login from './routes/Login';
+
 import Global from "./styles/Global";
 import Reset from "./styles/Reset";
 
@@ -15,6 +17,7 @@ root.render(
             <Reset></Reset>
             <Global></Global>
             <Routes>
+                <Route path="/" element={<Login></Login>}></Route>
             </Routes>
         </BrowserRouter>
     </React.StrictMode>
