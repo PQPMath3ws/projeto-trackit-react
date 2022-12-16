@@ -4,26 +4,25 @@ import styled from "styled-components";
 const LoginStyle = {
     LoginDiv: styled.div`
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        -o-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        -moz-transform: translate(-50%, -50%);
-        text-align: center;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     `,
     TrackItLogoDiv: styled.div`
-        margin-bottom: 20px;
+        text-align: center;
     `,
     TrackItLogo: styled.img`
-        width: 40%;
-        height: 40%;
+        width: 60%;
+        margin-bottom: 30px;
     `,
     InputsDiv: styled.div`
+        width: 80%;
         display: flex;
         flex-direction: column;
         gap: 20px;
-        width: 100%;
     `,
     Input: styled.input`
         height: 45px;
