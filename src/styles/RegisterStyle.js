@@ -2,13 +2,13 @@ import { isMobile } from "react-device-detect";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const LoginStyle = {
-    LoginDiv: styled.div`
+const RegisterStyle = {
+    RegisterDiv: styled.div`
         position: absolute;
         width: 100%;
         height: 100%;
-        ${!isMobile ? "padding-top: 80px;" : ""}
-        ${!isMobile ? "padding-bottom: 80px;" : ""}
+        ${!isMobile ? "padding-top: 140px;" : ""}
+        ${props => !isMobile ? "padding-bottom: " + (props.status === "" ? "160px;" : "180px;") : ""}
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -44,7 +44,7 @@ const LoginStyle = {
             outline: none;
         }
     `,
-    LoginButton: styled.button`
+    RegisterButton: styled.button`
         background: #52B6FF;
         border-radius: 5px;
         height: 50px;
@@ -63,19 +63,19 @@ const LoginStyle = {
             background: #3094DD;
         }
     `,
-    ErrorText: styled.p`
+    StatusMessage: styled.div`
         font-family: 'Lexend Deca';
         font-style: normal;
-        font-weight: 400;
+        font-weight: ${props => props.status === "error" ? "400" : "700"};
         font-size: 18px;
-        color: #CC2020;
+        color: ${props => props.status === "error" ? "#CC2020" : "#4BB543"};
         margin-top: 10px;
         text-align: center;
     `,
-    ForgottenDiv: styled.div`
+    HaveAccountDiv: styled.div`
         margin-top: 40px;
     `,
-    ForgottenLink: styled(Link)`
+    HaveAccountLink: styled(Link)`
         font-family: 'Lexend Deca';
         font-style: normal;
         font-weight: 400;
@@ -90,4 +90,4 @@ const LoginStyle = {
     `,
 };
 
-export default LoginStyle;
+export default RegisterStyle;

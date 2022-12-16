@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 
 import Login from './routes/Login';
+import Register from './routes/Register';
 
 import Global from "./styles/Global";
 import Reset from "./styles/Reset";
@@ -18,6 +19,7 @@ root.render(
             <Global></Global>
             <Routes>
                 <Route path="/" element={<Login></Login>}></Route>
+                <Route path="/cadastro" element={<Register></Register>}></Route>
             </Routes>
         </BrowserRouter>
     </React.StrictMode>
