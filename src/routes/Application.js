@@ -1,15 +1,23 @@
+import { useContext } from "react";
+import { Navigate } from "react-router-dom";
+
+import Context from "../context/Context";
+
 import ApplicationStyle from "../styles/ApplicationStyle";
 
-const Application = () => {
-    const userImage = window.atob(localStorage.getItem(window.btoa("image")));
+const Application = ({ children }) => {
+    const { image } = useContext(Context);
+
+    if (image === null) return (<Navigate to="/"></Navigate>);
 
     return (
         <ApplicationStyle.ApplicationDiv>
             <ApplicationStyle.HeaderApplicationDiv>
                 <ApplicationStyle.HeaderTrackItText>TrackIt</ApplicationStyle.HeaderTrackItText>
-                <ApplicationStyle.HeaderUserImage src={userImage}></ApplicationStyle.HeaderUserImage>
+                <ApplicationStyle.HeaderUserImage src={image}></ApplicationStyle.HeaderUserImage>
             </ApplicationStyle.HeaderApplicationDiv>
             <ApplicationStyle.ApplicationContent>
+                {children}
             </ApplicationStyle.ApplicationContent>
             <ApplicationStyle.FooterApplicationDiv>
                 <ApplicationStyle.FooterLink to="/habitos">Hábitos</ApplicationStyle.FooterLink>

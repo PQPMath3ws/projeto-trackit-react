@@ -1,7 +1,9 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
+
+import Context from "../context/Context";
 
 import logo from "../images/logo.png";
 
@@ -18,6 +20,8 @@ const Login = () => {
 
     const navigate = useNavigate();
 
+    const context = useContext(Context);
+
     async function logIn() {
         setIsLoginError(false);
         if (emailValue && passwordValue) {
@@ -31,6 +35,10 @@ const Login = () => {
                         "Content-Type": "application/json",
                     });
                     let json = JSON.parse(request.request.response);
+                    context.id = json.id;
+                    context.image = json.image;
+                    context.name = json.image;
+                    context.token = json.token;
                     localStorage.setItem(window.btoa("id"), window.btoa(json.id));
                     localStorage.setItem(window.btoa("image"), window.btoa(json.image));
                     localStorage.setItem(window.btoa("name"), window.btoa(json.name));
