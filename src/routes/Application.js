@@ -15,7 +15,7 @@ const Application = () => {
                 <ApplicationStyle.FooterLink to="/habitos">Hábitos</ApplicationStyle.FooterLink>
                 <ApplicationStyle.FooterDayDiv>
                     <ApplicationStyle.FooterDayIncompleteCircle></ApplicationStyle.FooterDayIncompleteCircle>
-                    <ApplicationStyle.FooterDayText>Hoje</ApplicationStyle.FooterDayText>
+                    <ApplicationStyle.FooterDayLink to="/hoje">Hoje</ApplicationStyle.FooterDayLink>
                 </ApplicationStyle.FooterDayDiv>
                 <ApplicationStyle.FooterLink to="/historico">Histórico</ApplicationStyle.FooterLink>
             </ApplicationStyle.FooterApplicationDiv>

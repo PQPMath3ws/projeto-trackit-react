@@ -74,13 +74,20 @@ const ApplicationStyle = {
         border: 2px solid #FFFFFF;
         border-radius: 50%;
     `,
-    FooterDayText: styled.p`
+    FooterDayLink: styled(Link)`
         position: absolute;
+        width: 91px;
+        height: 91px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration-line: none;
         font-family: 'Lexend Deca';
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
         color: #FFFFFF;
+        border-radius: 50%;
     `,
 };
 
