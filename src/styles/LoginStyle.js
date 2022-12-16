@@ -1,3 +1,4 @@
+import { isMobile } from "react-device-detect";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -6,6 +7,8 @@ const LoginStyle = {
         position: absolute;
         width: 100%;
         height: 100%;
+        ${!isMobile ? "padding-top: 80px;" : ""}
+        ${!isMobile ? "padding-bottom: 80px;" : ""}
         display: flex;
         flex-direction: column;
         align-items: center;
