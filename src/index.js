@@ -25,6 +25,8 @@ root.render(
                     <Route path="/" element={<Login></Login>}></Route>
                     <Route path="/cadastro" element={<Register></Register>}></Route>
                     <Route path="/habitos" element={<Application></Application>}></Route>
+                    <Route path="/hoje" element={<Application></Application>}></Route>
+                    <Route path="/historico" element={<Application></Application>}></Route>
                 </Routes>
             </BrowserRouter>
         </Provider>
