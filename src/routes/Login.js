@@ -43,7 +43,7 @@ const Login = () => {
                     localStorage.setItem(window.btoa("image"), window.btoa(json.image));
                     localStorage.setItem(window.btoa("name"), window.btoa(json.name));
                     localStorage.setItem(window.btoa("token"), window.btoa(json.token));
-                    navigate("/habitos");
+                    navigate("/hoje");
                 } catch (error) {
                     if (error.response.status === 422) {
                         setErrorMessage("Insira um email válido para entrar.");
