@@ -1,5 +1,8 @@
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+
+import "react-circular-progressbar/dist/styles.css";
 
 const ApplicationStyle = {
     ApplicationDiv: styled.div`
@@ -68,12 +71,14 @@ const ApplicationStyle = {
         justify-content: center;
         align-items: center;
     `,
-    FooterDayIncompleteCircle: styled.div`
-        width: 76px;
-        height: 76px;
-        border: 2px solid #FFFFFF;
-        border-radius: 50%;
+    FooterProgressCircle: styled(CircularProgressbar)`
+        width: 80px;
+        height: 80px;
     `,
+    FooterProgressCircleStyle: buildStyles({
+        pathColor: "#FFFFFF",
+        trailColor: "transparent",
+    }),
     FooterDayLink: styled(Link)`
         position: absolute;
         width: 91px;
