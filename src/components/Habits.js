@@ -135,7 +135,7 @@ const Habits = ({ getTodayHabits }) => {
                 </HabitsStyle.NoHabitsFoundText> : habits.map((habit, index) => <HabitsStyle.HabitDiv key={"habits_id_" + index}>
                     <HabitsStyle.HabitNameText>{habit.name}</HabitsStyle.HabitNameText>
                     <HabitsStyle.DaysHabitsDiv>
-                        {buttonsDays.map((day, index) => <HabitsStyle.DayHabitDiv selected={habit.days.includes(index)}>
+                        {buttonsDays.map((day, index) => <HabitsStyle.DayHabitDiv selected={habit.days.includes(index)} key={"days_key_" + day.index}>
                             <HabitsStyle.DayHabitText selected={habit.days.includes(index)}>{day.day}</HabitsStyle.DayHabitText>
                         </HabitsStyle.DayHabitDiv>)}
                     </HabitsStyle.DaysHabitsDiv>
