@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 
 import Habits from "./components/Habits";
+import Historic from './components/Historic';
 import Today from './components/Today';
 
 import Provider from './context/Provider';
@@ -29,7 +30,7 @@ root.render(
                     <Route path="/cadastro" element={<Register></Register>}></Route>
                     <Route path="/habitos" element={<Application><Habits></Habits></Application>}></Route>
                     <Route path="/hoje" element={<Application><Today></Today></Application>}></Route>
-                    <Route path="/historico" element={<Application></Application>}></Route>
+                    <Route path="/historico" element={<Application><Historic></Historic></Application>}></Route>
                 </Routes>
             </BrowserRouter>
         </Provider>
