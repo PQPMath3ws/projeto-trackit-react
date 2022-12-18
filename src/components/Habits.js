@@ -37,8 +37,10 @@ const Habits = ({ getTodayHabits }) => {
             setHabits(request.data);
             await getTodayHabits();
         } catch (_) {
-            localStorage.removeItem(window.btoa("image"));
-            localStorage.removeItem(window.btoa("token"));
+            if (token !== null) {
+                localStorage.removeItem(window.btoa("image"));
+                localStorage.removeItem(window.btoa("token"));
+            }
             navigate("/");
         }
     }

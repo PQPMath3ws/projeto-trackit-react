@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useContext, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 
 import Context from "../context/Context";
 
@@ -58,6 +58,14 @@ const Login = () => {
             setErrorMessage("Preencha as informações de login para continuar.");
             setIsLoginError(true);
         }
+    }
+
+    const [image, token] = [localStorage.getItem(window.btoa("image")), localStorage.getItem(window.btoa("token"))];
+
+    if (image !== null && token !== null) {
+        context.image = window.atob(image);
+        context.token = window.atob(token);
+        return (<Navigate to="/hoje"></Navigate>);
     }
 
     return (

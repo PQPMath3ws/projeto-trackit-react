@@ -22,8 +22,10 @@ const Application = ({ children }) => {
             });
             setTodayHabits(request.data);
         } catch (_) {
-            localStorage.removeItem(window.btoa("image"));
-            localStorage.removeItem(window.btoa("token"));
+            if (token !== null && image !== null) {
+                localStorage.removeItem(window.btoa("image"));
+                localStorage.removeItem(window.btoa("token"));
+            }
             navigate("/");
         }
     }
