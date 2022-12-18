@@ -35,13 +35,9 @@ const Login = () => {
                         "Content-Type": "application/json",
                     });
                     let json = JSON.parse(request.request.response);
-                    context.id = json.id;
                     context.image = json.image;
-                    context.name = json.image;
                     context.token = json.token;
-                    localStorage.setItem(window.btoa("id"), window.btoa(json.id));
                     localStorage.setItem(window.btoa("image"), window.btoa(json.image));
-                    localStorage.setItem(window.btoa("name"), window.btoa(json.name));
                     localStorage.setItem(window.btoa("token"), window.btoa(json.token));
                     navigate("/hoje");
                 } catch (error) {

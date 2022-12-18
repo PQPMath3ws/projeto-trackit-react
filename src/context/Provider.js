@@ -7,9 +7,7 @@ const Provider = ({ children }) => {
 
     return (
         <Context.Provider value={{
-            id: context.id,
             image: context.image,
-            name: context.name,
             token: context.token,
         }}>
             {children}
