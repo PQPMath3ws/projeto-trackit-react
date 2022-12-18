@@ -6,7 +6,7 @@ import Context from "../context/Context";
 
 import HabitsStyle from "../styles/HabitsStyle";
 
-const Habits = () => {
+const Habits = ({ getTodayHabits }) => {
     const [inputsAndButtonsDisabled, setInputsAndButtonsDisabled] = useState(false);
     const [habits, setHabits] = useState([]);
     const [canShowAddHabits, setCanShowAddHabits] = useState(false);
@@ -35,6 +35,7 @@ const Habits = () => {
                 }
             });
             setHabits(request.data);
+            await getTodayHabits();
         } catch (_) {
             localStorage.removeItem(window.btoa("id"));
             localStorage.removeItem(window.btoa("image"));
@@ -63,6 +64,7 @@ const Habits = () => {
             cancelHabitsClick();
             setHabitName("");
             setButtonsSelectedStates(new Array(7).fill(false));
+            await getTodayHabits();
 
         } catch (error) {
             alert(error.response.data.message);
@@ -94,6 +96,7 @@ const Habits = () => {
                     },
                 });
                 await getHabits();
+                await getTodayHabits();
             } catch (error) {
                 alert(error.response.data.message);
             }
