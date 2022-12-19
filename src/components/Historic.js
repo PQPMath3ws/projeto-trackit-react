@@ -61,7 +61,7 @@ const Historic = () => {
     return (
         <HistoricStyle.HistoricDiv>
             <HistoricStyle.HistoricTitle>Histórico</HistoricStyle.HistoricTitle>
-            <HistoricStyle.HistoricCalendar tileClassName={formatDay} onClickDay={canViewDayHabits}></HistoricStyle.HistoricCalendar>
+            <HistoricStyle.HistoricCalendar data-test="calendar" tileClassName={formatDay} onClickDay={canViewDayHabits}></HistoricStyle.HistoricCalendar>
         </HistoricStyle.HistoricDiv>
     );
 };

@@ -40,16 +40,16 @@ const Today = ({ todayHabits, getTodayHabits }) => {
 
     return (
         <TodayStyle.TodayDiv>
-            <TodayStyle.DayTitle>{days[day.getDay()]}, {day.getDate()}/{day.getMonth() + 1}</TodayStyle.DayTitle>
-            <TodayStyle.TotalHabitsCompleteText value={todayHabits.length > 0 ? todayHabits.filter(todayHabit => todayHabit.done).length : 1}>
+            <TodayStyle.DayTitle data-test="today">{days[day.getDay()]}, {day.getDate()}/{day.getMonth() + 1}</TodayStyle.DayTitle>
+            <TodayStyle.TotalHabitsCompleteText data-test="today-counter" value={todayHabits.length > 0 ? todayHabits.filter(todayHabit => todayHabit.done).length : 1}>
                 {todayHabits.length > 0 ? todayHabits.filter(todayHabit => todayHabit.done).length > 0 ? `${parseInt((todayHabits.filter(todayHabit => todayHabit.done).length / todayHabits.length) * 100)}% dos hábitos concluídos` : "Nenhum hábito concluído ainda" : "100% dos hábitos concluídos"}
             </TodayStyle.TotalHabitsCompleteText>
             <TodayStyle.TodayHabitsDiv>
-                {todayHabits.map(todayHabit => <TodayStyle.TodayHabitDiv key={"habit_id_" + todayHabit.id}>
-                    <TodayStyle.HabitNameText>{todayHabit.name}</TodayStyle.HabitNameText>
-                    <TodayStyle.HabitDescriptionText>Sequência atual: {todayHabit.currentSequence} dias</TodayStyle.HabitDescriptionText>
-                    <TodayStyle.HabitDescriptionText>Seu recorde: {todayHabit.highestSequence} dias</TodayStyle.HabitDescriptionText>
-                    <TodayStyle.HabitStatusDiv done={todayHabit.done} onClick={() => changeHabitState(todayHabit.id, todayHabit.done)}>
+                {todayHabits.map(todayHabit => <TodayStyle.TodayHabitDiv data-test="today-habit-container" key={"habit_id_" + todayHabit.id}>
+                    <TodayStyle.HabitNameText data-test="today-habit-name">{todayHabit.name}</TodayStyle.HabitNameText>
+                    <TodayStyle.HabitDescriptionText data-test="today-habit-sequence">Sequência atual: {todayHabit.currentSequence} dias</TodayStyle.HabitDescriptionText>
+                    <TodayStyle.HabitDescriptionText data-test="today-habit-record">Seu recorde: {todayHabit.highestSequence} dias</TodayStyle.HabitDescriptionText>
+                    <TodayStyle.HabitStatusDiv data-test="today-habit-check-btn" done={todayHabit.done} onClick={() => changeHabitState(todayHabit.id, todayHabit.done)}>
                         <Checkmark width="50px" height="50px" color="#FFFFFF"></Checkmark>
                     </TodayStyle.HabitStatusDiv>
                 </TodayStyle.TodayHabitDiv>)}

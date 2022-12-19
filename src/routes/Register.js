@@ -78,11 +78,11 @@ const Register = () => {
                 <RegisterStyle.TrackItLogo src={logo}></RegisterStyle.TrackItLogo>
             </RegisterStyle.TrackItLogoDiv>
             <RegisterStyle.InputsDiv>
-                <RegisterStyle.Input disabled={inputsAndButtonsDisabled} onChange={(input) => setEmailValue(input.target.value.replaceAll(" ", ""))} placeholder="email" type="email" value={emailValue}></RegisterStyle.Input>
-                <RegisterStyle.Input disabled={inputsAndButtonsDisabled} onChange={(input) => setPasswordValue(input.target.value)} placeholder="senha" type="password" value={passwordValue}></RegisterStyle.Input>
-                <RegisterStyle.Input disabled={inputsAndButtonsDisabled} onChange={(input) => setNameValue(input.target.value)} placeholder="nome" type="text" value={nameValue}></RegisterStyle.Input>
-                <RegisterStyle.Input disabled={inputsAndButtonsDisabled} onChange={(input) => setPhotoValue(input.target.value.replaceAll(" ", ""))} placeholder="foto" type="text" value={photoValue}></RegisterStyle.Input>
-                <RegisterStyle.RegisterButton onClick={register}>
+                <RegisterStyle.Input data-test="email-input" disabled={inputsAndButtonsDisabled} onChange={(input) => setEmailValue(input.target.value.replaceAll(" ", ""))} placeholder="email" type="email" value={emailValue}></RegisterStyle.Input>
+                <RegisterStyle.Input data-test="password-input" disabled={inputsAndButtonsDisabled} onChange={(input) => setPasswordValue(input.target.value)} placeholder="senha" type="password" value={passwordValue}></RegisterStyle.Input>
+                <RegisterStyle.Input data-test="user-name-input" disabled={inputsAndButtonsDisabled} onChange={(input) => setNameValue(input.target.value)} placeholder="nome" type="text" value={nameValue}></RegisterStyle.Input>
+                <RegisterStyle.Input data-test="user-image-input" disabled={inputsAndButtonsDisabled} onChange={(input) => setPhotoValue(input.target.value.replaceAll(" ", ""))} placeholder="foto" type="text" value={photoValue}></RegisterStyle.Input>
+                <RegisterStyle.RegisterButton data-test="signup-btn" onClick={register}>
                     {inputsAndButtonsDisabled ? <ThreeDots ariaLabel="three-dots-loading" color="#FFFFFF" height="50" radius="9" visible={true} width="50">
                     </ThreeDots> : "Registrar"}
                 </RegisterStyle.RegisterButton>
@@ -91,7 +91,7 @@ const Register = () => {
                 </RegisterStyle.StatusMessage> : null}
             </RegisterStyle.InputsDiv>
             <RegisterStyle.HaveAccountDiv>
-                <RegisterStyle.HaveAccountLink to="/">
+                <RegisterStyle.HaveAccountLink data-test="login-link" to="/">
                     Já tem uma conta? Faça login!
                 </RegisterStyle.HaveAccountLink>
             </RegisterStyle.HaveAccountDiv>

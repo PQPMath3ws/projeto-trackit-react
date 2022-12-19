@@ -113,33 +113,33 @@ const Habits = ({ getTodayHabits }) => {
         <HabitsStyle.HabitsDiv>
             <HabitsStyle.AddHabitsDiv>
                 <HabitsStyle.MyHabitsText>Meus hábitos</HabitsStyle.MyHabitsText>
-                <HabitsStyle.AddHabitsButton onClick={addHabitsClick}>+</HabitsStyle.AddHabitsButton>
+                <HabitsStyle.AddHabitsButton data-test="habit-create-btn" onClick={addHabitsClick}>+</HabitsStyle.AddHabitsButton>
             </HabitsStyle.AddHabitsDiv>
-            {canShowAddHabits ? <HabitsStyle.AddHabitDiv>
+            {canShowAddHabits ? <HabitsStyle.AddHabitDiv data-test="habit-create-container">
                 <HabitsStyle.HabitNameInputDiv>
-                    <HabitsStyle.HabitNameInput disabled={inputsAndButtonsDisabled} onChange={(input) => setHabitName(input.target.value)} placeholder="Nome do hábito" value={habitName}></HabitsStyle.HabitNameInput>
+                    <HabitsStyle.HabitNameInput data-test="habit-name-input" disabled={inputsAndButtonsDisabled} onChange={(input) => setHabitName(input.target.value)} placeholder="Nome do hábito" value={habitName}></HabitsStyle.HabitNameInput>
                 </HabitsStyle.HabitNameInputDiv>
                 <HabitsStyle.DaysButtonDiv>
-                    {buttonsDays.map(day => <HabitsStyle.DayButton disabled={inputsAndButtonsDisabled} key={"buttons_id_" + day.index} selected={buttonsSelectedStates[day.index]} onClick={() => changeButtonIndexValue(day.index)}>
+                    {buttonsDays.map(day => <HabitsStyle.DayButton data-test="habit-day" disabled={inputsAndButtonsDisabled} key={"buttons_id_" + day.index} selected={buttonsSelectedStates[day.index]} onClick={() => changeButtonIndexValue(day.index)}>
                         {day.day}
                     </HabitsStyle.DayButton>)}
                 </HabitsStyle.DaysButtonDiv>
                 <HabitsStyle.AddHabitsActionsDiv>
-                    <HabitsStyle.CancelAddHabitButton disabled={inputsAndButtonsDisabled} onClick={cancelHabitsClick}>Cancelar</HabitsStyle.CancelAddHabitButton>
-                    <HabitsStyle.SaveAddHabitButton disabled={inputsAndButtonsDisabled} onClick={sendHabit}>Salvar</HabitsStyle.SaveAddHabitButton>
+                    <HabitsStyle.CancelAddHabitButton data-test="habit-create-cancel-btn" disabled={inputsAndButtonsDisabled} onClick={cancelHabitsClick}>Cancelar</HabitsStyle.CancelAddHabitButton>
+                    <HabitsStyle.SaveAddHabitButton data-test="habit-create-save-btn" disabled={inputsAndButtonsDisabled} onClick={sendHabit}>Salvar</HabitsStyle.SaveAddHabitButton>
                 </HabitsStyle.AddHabitsActionsDiv>
             </HabitsStyle.AddHabitDiv> : null}
             <HabitsStyle.ListHabitsDiv>
                 {habits.length === 0 ? <HabitsStyle.NoHabitsFoundText>
                     Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!
-                </HabitsStyle.NoHabitsFoundText> : habits.map((habit, index) => <HabitsStyle.HabitDiv key={"habits_id_" + index}>
-                    <HabitsStyle.HabitNameText>{habit.name}</HabitsStyle.HabitNameText>
+                </HabitsStyle.NoHabitsFoundText> : habits.map((habit, index) => <HabitsStyle.HabitDiv data-test="habit-container" key={"habits_id_" + index}>
+                    <HabitsStyle.HabitNameText data-test="habit-name">{habit.name}</HabitsStyle.HabitNameText>
                     <HabitsStyle.DaysHabitsDiv>
-                        {buttonsDays.map((day, index) => <HabitsStyle.DayHabitDiv selected={habit.days.includes(index)} key={"days_key_" + day.index}>
+                        {buttonsDays.map((day, index) => <HabitsStyle.DayHabitDiv data-test="habit-day" selected={habit.days.includes(index)} key={"days_key_" + day.index}>
                             <HabitsStyle.DayHabitText selected={habit.days.includes(index)}>{day.day}</HabitsStyle.DayHabitText>
                         </HabitsStyle.DayHabitDiv>)}
                     </HabitsStyle.DaysHabitsDiv>
-                    <HabitsStyle.DayHabitRemoveButton onClick={() => removeHabit(habit.id)}>
+                    <HabitsStyle.DayHabitRemoveButton data-test="habit-delete-btn" onClick={() => removeHabit(habit.id)}>
                         <HabitsStyle.TrashIcon></HabitsStyle.TrashIcon>
                     </HabitsStyle.DayHabitRemoveButton>
                 </HabitsStyle.HabitDiv>)}

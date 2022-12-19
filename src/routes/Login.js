@@ -74,9 +74,9 @@ const Login = () => {
                 <LoginStyle.TrackItLogo src={logo}></LoginStyle.TrackItLogo>
             </LoginStyle.TrackItLogoDiv>
             <LoginStyle.InputsDiv>
-                <LoginStyle.Input disabled={inputsAndButtonsDisabled} onChange={(input) => setEmailValue(input.target.value.replaceAll(" ", ""))} placeholder="email" type="email" value={emailValue}></LoginStyle.Input>
-                <LoginStyle.Input disabled={inputsAndButtonsDisabled} onChange={(input) => setPasswordValue(input.target.value)} placeholder="senha" type="password" value={passwordValue}></LoginStyle.Input>
-                <LoginStyle.LoginButton disabled={inputsAndButtonsDisabled} onClick={logIn}>
+                <LoginStyle.Input data-test="email-input" disabled={inputsAndButtonsDisabled} onChange={(input) => setEmailValue(input.target.value.replaceAll(" ", ""))} placeholder="email" type="email" value={emailValue}></LoginStyle.Input>
+                <LoginStyle.Input data-test="password-input" disabled={inputsAndButtonsDisabled} onChange={(input) => setPasswordValue(input.target.value)} placeholder="senha" type="password" value={passwordValue}></LoginStyle.Input>
+                <LoginStyle.LoginButton data-test="login-btn" disabled={inputsAndButtonsDisabled} onClick={logIn}>
                     {inputsAndButtonsDisabled ? <ThreeDots ariaLabel="three-dots-loading" color="#FFFFFF" height="50" radius="9" visible={true} width="50">
                     </ThreeDots> : "Entrar"}
                 </LoginStyle.LoginButton>
@@ -85,7 +85,7 @@ const Login = () => {
                 </LoginStyle.ErrorText> : null}
             </LoginStyle.InputsDiv>
             <LoginStyle.ForgottenDiv>
-                <LoginStyle.ForgottenLink to="/cadastro">
+                <LoginStyle.ForgottenLink data-test="signup-link" to="/cadastro">
                     Não tem uma conta? Cadastre-se!
                 </LoginStyle.ForgottenLink>
             </LoginStyle.ForgottenDiv>
