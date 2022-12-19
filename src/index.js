@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 
 import reportWebVitals from './reportWebVitals';
 
@@ -23,7 +23,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <Provider>
-            <BrowserRouter>
+            <HashRouter>
                 <Reset></Reset>
                 <Global></Global>
                 <Routes>
@@ -34,7 +34,7 @@ root.render(
                     <Route path="/historico" element={<Application><Historic></Historic></Application>}></Route>
                     <Route path="/habitos-dia" element={<Application><DayHabits></DayHabits></Application>}></Route>
                 </Routes>
-            </BrowserRouter>
+            </HashRouter>
         </Provider>
     </React.StrictMode>
 );
