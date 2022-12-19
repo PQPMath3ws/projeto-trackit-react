@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/projeto-trackit-react/static/css/main.23c861cf.css",
+    "main.js": "/projeto-trackit-react/static/js/main.82556a7c.js",
+    "static/js/522.b14214db.chunk.js": "/projeto-trackit-react/static/js/522.b14214db.chunk.js",
+    "static/media/logo.png": "/projeto-trackit-react/static/media/logo.cb6031c1a7782aa4e40b.png",
+    "index.html": "/projeto-trackit-react/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.23c861cf.css",
+    "static/js/main.82556a7c.js"
+  ]
+}
