@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import reportWebVitals from './reportWebVitals';
 
+import DayHabits from './components/DayHabits';
 import Habits from "./components/Habits";
 import Historic from './components/Historic';
 import Today from './components/Today';
@@ -31,6 +32,7 @@ root.render(
                     <Route path="/habitos" element={<Application><Habits></Habits></Application>}></Route>
                     <Route path="/hoje" element={<Application><Today></Today></Application>}></Route>
                     <Route path="/historico" element={<Application><Historic></Historic></Application>}></Route>
+                    <Route path="/habitos-dia" element={<Application><DayHabits></DayHabits></Application>}></Route>
                 </Routes>
             </BrowserRouter>
         </Provider>

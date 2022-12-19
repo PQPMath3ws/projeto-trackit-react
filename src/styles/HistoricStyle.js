@@ -1,3 +1,4 @@
+import Calendar from "react-calendar";
 import styled from "styled-components";
 
 const HistoricStyle = {
@@ -15,13 +16,8 @@ const HistoricStyle = {
         font-size: 23px;
         color: #126BA5;
     `,
-    SoonText: styled.p`
+    HistoricCalendar: styled(Calendar)`
         margin-top: 20px;
-        font-family: 'Lexend Deca';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
-        color: #666666;
     `,
 };
 
