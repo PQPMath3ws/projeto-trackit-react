@@ -1,0 +1,24 @@
+name: React CI Build Action
+
+on:
+  push:
+    branches:
+      - build-github-react
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '18.12.1'
+      - name: Building web-app
+        run: |
+          CI="false" npm ci --force
+          CI="false" npm run build
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
